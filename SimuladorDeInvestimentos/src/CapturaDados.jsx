@@ -25,6 +25,14 @@ const CapturaDados = props => {
         props.setRentabilidade(rentabilidade.toFixed(2))
     }
 
+    const limpar = () => {
+        props.setValorFinal(0)
+        props.setTotal(0)
+        props.setAporte(0)
+        props.setJuros(0)
+        props.setRentabilidade(0)
+    }
+
     return(
         <div class="container">
             <div class="row">
@@ -64,7 +72,7 @@ const CapturaDados = props => {
                     <button class="mt-4 w-100" style={{
                         fontSize: 20,
                         borderRadius: 7
-                    }}>Limpar</button>
+                    }} onClick={limpar} >Limpar</button>
                 </div>
             </div>
         </div>
