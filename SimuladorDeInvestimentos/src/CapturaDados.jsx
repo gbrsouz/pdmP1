@@ -23,6 +23,8 @@ const CapturaDados = props => {
         props.setAporte(periodo)
         props.setJuros(juros.toFixed(2))
         props.setRentabilidade(rentabilidade.toFixed(2))
+
+        props.setHistorico((prev) => ([...prev, {data: new Date(), valor: montante.toFixed(2)}]))
     }
 
     const limpar = () => {

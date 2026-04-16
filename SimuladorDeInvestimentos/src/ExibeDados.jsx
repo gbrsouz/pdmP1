@@ -8,7 +8,7 @@ const ExibeDados = props => {
     }}>
         <div class="row">
             <div class="col-md-12">
-                <h6>Valor Final Acumulado</h6>
+                <h6 class="mt-2">Valor Final Acumulado</h6>
                 <h5 style={{
                     color: "#3B6409"
                 }}>R$ {props.valorFinal}</h5>

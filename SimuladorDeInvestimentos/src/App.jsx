@@ -8,6 +8,7 @@ function App() {
   const[aporte, setAporte] = useState(0)
   const[juros, setJuros] = useState(0)
   const[rentabilidade, setRentabilidade] = useState(0)
+  const[historico, setHistorico] = useState([])
 
   return (
     <div class="container">
@@ -23,6 +24,8 @@ function App() {
             setAporte = {setAporte}
             setJuros = {setJuros}
             setRentabilidade = {setRentabilidade}
+            historico = {historico}
+            setHistorico = {setHistorico}
           ></CapturaDados>
           <ExibeDados
             valorFinal = {valorFinal}
@@ -31,6 +34,28 @@ function App() {
             juros = {juros}
             rentabilidade = {rentabilidade}
           ></ExibeDados>
+          <table className="table mt-4" style={{
+            border: "2px solid gray"
+          }}>
+              <thead>
+                <tr style={{fontSize:20}}>
+                  <th>Data</th>
+                  <th>Valor (R$)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {historico.map((registro, i) => (
+                  <tr key={i} style={{fontSize:15}}>
+                    <td>
+                      {new Date(registro.data).toLocaleString()}
+                    </td>
+                    <td>
+                      {registro.valor}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
         </div>
       </div>
     </div>
